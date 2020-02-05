@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: Coldstart-sheikhisaac
+Version: 0.0.1
+Summary: cli tool for rapid project bootstrapping
+Home-page: https://github.com/sheikhisaac/Coldstart
+Author: Isaac Sheikh
+Author-email: sheikhisaac@example.com
+License: UNKNOWN
+Description: Coldstart is a Python cli tool built with click to quickly create a development environment for                         your next project
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Mac
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

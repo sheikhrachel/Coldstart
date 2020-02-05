@@ -1,12 +1,12 @@
-# cli.py
+# create_project_folder.py
 import click
 import os
 import sys
 
 
+# Create new project and set working directory to project location
 def create_project_folder():
     project_path = set_new_project_name()
-
     click.echo('Project created at %s' % project_path)
     click.echo('Changing current working directory to project directory')
     try:
@@ -15,6 +15,7 @@ def create_project_folder():
         click.echo('that path won\'t work!')
 
 
+# Validate current working directory destination for project directory
 def determine_correct_path():
     current_path: str = os.getcwd()
     click.echo('Current working directory is %s' % current_path)
@@ -35,6 +36,7 @@ def determine_correct_path():
         determine_correct_path_no_prompt()
 
 
+# Handle incorrect inputs for determine_correct_path()
 def determine_correct_path_no_prompt():
     current_path: str = os.getcwd()
     c = click.getchar()
@@ -54,6 +56,7 @@ def determine_correct_path_no_prompt():
         determine_correct_path_no_prompt()
 
 
+# Set new working directory destination for project directory
 def set_new_project_path():
     click.echo('What directory would you like to create a new project in: ', nl=False)
     for line in sys.stdin:
@@ -66,6 +69,7 @@ def set_new_project_path():
         set_new_project_path()
 
 
+# Set new project name to create project directory
 def set_new_project_name():
     target_path: str = determine_correct_path()
     click.echo('What would you like to name this project: ', nl=False)

@@ -1,17 +1,14 @@
-# cli.py
-import click
-from validate_responses import create_project_validation
+# Coldstart.py
 from logo import present_logo
+from validate_responses import validate_create_project
+from create_environment import language_validation
 
 
-@click.command()
+# main class to orchestrate scripts in order
 def main():
-    click.clear()
     present_logo()
-    create_project_validation()
-
-
-# f=(open(filename), 'w+')
+    validate_create_project()
+    language_validation()
 
 
 if __name__ == "__main__":

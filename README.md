@@ -5,11 +5,13 @@ Coldstart is a Python cli tool built with click to quickly create a development 
 ## Features
 - Builds configured via Travis CI/CD
 
+- Sets up git connections based on provided repository remote
+
 - Git hooks configured with Pre-Commit
 
 - File directory navigation to create projects from anywhere within filesystem
 
-- Multiple language support: Python3, Ruby, C++
+- Current environment language support: Python3
 
 ## Prerequisites
 
