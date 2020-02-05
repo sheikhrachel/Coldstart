@@ -16,3 +16,8 @@ def determine_language():
 # Handle incorrect inputs for determine_language()
 def determine_language_no_prompt():
     pass
+
+
+# Handle init git repo for project from user provided git remote
+def init_git(url: str):
+    pass

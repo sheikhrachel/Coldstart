@@ -2,6 +2,6 @@
 # import click
 
 
-# create python development environment
+# create python development
 def python_setup():
     pass

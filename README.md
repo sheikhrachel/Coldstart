@@ -3,7 +3,7 @@
 Coldstart is a Python cli tool built with click to quickly create a development environment for your next project
 
 ## Features
-- Builds configured via Travis CI/CD
+- Builds configured with Poetry
 
 - Sets up git connections based on provided repository remote
 
@@ -15,40 +15,28 @@ Coldstart is a Python cli tool built with click to quickly create a development 
 
 ## Prerequisites
 
-Ensure you are running Python 3.7.1
+Ensure you are running a Python version >= 3.6
 
 ```zsh
-$ python3 --version # returns 'Python 3.7.1'
+$ python3 --version # returns 'Python 3.7.1' or a version >= 'Python 3.6'
 ```
 
-Use pipenv to install all required pip3 packages from Pipfile and create virtual environment
+Use pip3 to install the Coldstart package
 
 ```zsh
-$ pipenv install
+$ pip3 install Coldstart
 ```
 
-Use pipenv to access functions
+Validate Coldstart installation with --version
 
 ```zsh
-$ pipenv shell
-```
-
-Set up git hooks for pre-commit checks notated in .pre-commit-config.yaml
-
-```zsh
-$ pre-commit install
+$ Coldstart --version # returns 'Coldstart version 0.0.1'
 ```
 
 ## Usage
 
 ```zsh
-$ python3 Coldstart.py
-```
-
-Run the unit tests
-
-```zsh
-$ pytest -v
+$ Coldstart # Starts the Coldstart project creation flow
 ```
 
 ## Contact Info

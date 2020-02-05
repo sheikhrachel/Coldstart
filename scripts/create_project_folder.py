@@ -2,17 +2,16 @@
 import click
 import os
 import sys
+from exit_test import exit_test
 
 
 # Create new project and set working directory to project location
 def create_project_folder():
-    project_path = set_new_project_name()
-    click.echo('Project created at %s' % project_path)
+    project_details_dict = set_new_project_name()
+    click.echo('%s created at %s' % (project_details_dict['project name'], project_details_dict['project path']))
     click.echo('Changing current working directory to project directory')
-    try:
-        os.chdir(project_path)
-    except OSError:
-        click.echo('that path won\'t work!')
+    os.chdir(project_details_dict['project path'])
+    exit_test(project_details_dict['project path'])
 
 
 # Validate current working directory destination for project directory
@@ -72,15 +71,17 @@ def set_new_project_path():
 # Set new project name to create project directory
 def set_new_project_name():
     target_path: str = determine_correct_path()
+    project_details_dict: dict = {'project name': '', 'project path': ''}
     click.echo('What would you like to name this project: ', nl=False)
     for line in sys.stdin:
         project_name: str = line.rstrip()
         break
-    project_path: str = os.path.join(target_path, project_name)
+    project_details_dict['project name']: str = project_name
+    project_details_dict['project path']: str = os.path.join(target_path, project_details_dict['project name'])
     try:
-        os.mkdir(project_path)
-        return project_path
+        os.mkdir(project_details_dict['project path'])
+        return project_details_dict
     except OSError:
-        click.echo('that project already exists!')
+        click.echo('That project already exists!')
         click.echo(' ')
         set_new_project_name()

@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "Coldstart"
+version = "0.0.1"
+description = "Coldstart is a Python cli tool built with click to quickly create a development environment for your next project"
+authors = ["Isaac Sheikh <sheikhisaac@gmail.com>"]
+packages = [{ include = "scripts" }]
+
+[tool.poetry.dependencies]
+python = ">=3.6"
+click = "^7.0"
+pre-commit = "^2.0.1"
+flake8 = "^3.7.9"
+black = "^19.10b0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.4"
