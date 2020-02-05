@@ -1,6 +1,7 @@
 # exit_test.py
 import click
 import os
+import shutil
 
 
 # Delete working directory from file system for debugging
@@ -10,5 +11,5 @@ def exit_test(project_path: str):
     click.echo('Current working directory is %s' % current_path)
     os.chdir(r'..')
     click.echo('Current working directory is %s' % os.getcwd())
-    os.rmdir(current_path)
+    shutil.rmtree(current_path)
     click.echo('%s deleted!' % current_path)

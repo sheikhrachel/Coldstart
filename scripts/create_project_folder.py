@@ -3,6 +3,7 @@ import click
 import os
 import sys
 from exit_test import exit_test
+from create_environment import init_git
 
 
 # Create new project and set working directory to project location
@@ -11,6 +12,7 @@ def create_project_folder():
     click.echo('%s created at %s' % (project_details_dict['project name'], project_details_dict['project path']))
     click.echo('Changing current working directory to project directory')
     os.chdir(project_details_dict['project path'])
+    init_git()
     exit_test(project_details_dict['project path'])
 
 
