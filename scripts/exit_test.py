@@ -5,11 +5,10 @@ import shutil
 
 
 # Delete working directory from file system for debugging
-def exit_test(project_path: str):
-    click.pause()
-    current_path: str = project_path
-    click.echo('Current working directory is %s' % current_path)
+def exit_test(project_name: str):
+    os.chdir(project_name)
+    project_path = os.getcwd()
     os.chdir(r'..')
-    click.echo('Current working directory is %s' % os.getcwd())
-    shutil.rmtree(current_path)
-    click.echo('%s deleted!' % current_path)
+    click.echo('Deleting Project: [' + project_name + ']')
+    shutil.rmtree(project_path)
+    click.echo('Project [' + project_name + '] deleted!')
