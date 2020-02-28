@@ -9,48 +9,48 @@ import os
 # create test_main.py file in test folder
 def python_setup(project_name: str):
     # gitignore setup
-    f = open('.gitignore', 'w+')
+    f = open(".gitignore", "w+")
     f.write(gitignore_str)
     f.close()
     # Pipfile setup
-    f = open('Pipfile', 'w+')
+    f = open("Pipfile", "w+")
     f.write(pipfile_str)
     f.close()
     # pre-commit config
-    f = open('.pre-commit-config.yaml', 'w+')
+    f = open(".pre-commit-config.yaml", "w+")
     f.write(precommit_str)
     f.close()
     # tox.ini setup
-    f = open('tox.ini', 'w+')
+    f = open("tox.ini", "w+")
     f.write(tox_str)
     f.close()
     # travis setup
-    f = open('.travis.yml', 'w+')
+    f = open(".travis.yml", "w+")
     f.write(travis_str)
     f.close()
 
     # src folder files
-    os.mkdir('src')
-    os.chdir('src')
+    os.mkdir("src")
+    os.chdir("src")
     # main project py file
-    f = open(project_name + '.py', 'w+')
+    f = open(project_name + ".py", "w+")
     f.close()
     # api key file
-    f = open('api_key.py', 'w+')
+    f = open("api_key.py", "w+")
     f.close()
     # gitignore for src directory
-    f = open('.gitignore', 'w+')
+    f = open(".gitignore", "w+")
     f.write(gitignoresrc_str)
     f.close()
-    os.chdir(r'..')
+    os.chdir(r"..")
 
     # test folder files
-    os.mkdir('tests')
-    os.chdir('tests')
-    f = open('test_' + project_name + '.py', 'w+')
-    f.write('import pytest')
+    os.mkdir("tests")
+    os.chdir("tests")
+    f = open("test_" + project_name + ".py", "w+")
+    f.write("import pytest")
     f.close()
-    os.chdir(r'..')
+    os.chdir(r"..")
 
 
 gitignore_str = """
@@ -78,7 +78,7 @@ pre-commit = "*"
 black = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"
 
 [pipenv]
 allow_prereleases = true
