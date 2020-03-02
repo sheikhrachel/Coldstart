@@ -1,4 +1,5 @@
 # Coldstart
+[![Build status](https://travis-ci.com/sheikhisaac/Coldstart.svg?token=zsGPkD9bv7zhqvJzsjQU&branch=master)](https://travis-ci.org/sheikhisaac)
 
 Coldstart is a Python cli tool built with click to quickly create a development environment for your next project
 

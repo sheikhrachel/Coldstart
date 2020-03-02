@@ -5,6 +5,9 @@
 def create_readme(project_name: str):
     f = open("README.md", "w+")
     f.write("# " + project_name)
+    f.write(
+        "[![Build status](https://travis-ci.com/USER/PROJECT)](https://travis-ci.org/USER)"
+    )
     f.write("\n\n")
     f.write("## Features")
     f.write("\n\n")
