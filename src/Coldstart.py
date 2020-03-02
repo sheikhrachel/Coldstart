@@ -15,17 +15,17 @@ from language_determination import language_determination
 @click.pass_context
 def cli(ctx):
     init(strip=not sys.stdout.isatty())
-    pyfig_text = 'Coldstart'
+    pyfig_text = "Coldstart"
     click.clear()
-    cprint(figlet_format(pyfig_text, font='standard'), 'blue')
+    cprint(figlet_format(pyfig_text, font="standard"), "blue")
 
 
-@cli.command('project')
-@click.option('-p', required=True, type=str)
-@click.option('-l', type=str)
-@click.option('-lang', type=str)
+@cli.command("project")
+@click.option("-p", required=True, type=str)
+@click.option("-l", type=str)
+@click.option("-lang", type=str)
 def create_project(p, l, lang):
-    click.echo('Creating Project: [' + p + ']')
+    click.echo("Creating Project: [" + p + "]")
     os.mkdir(p)
     os.chdir(p)
     create_readme(p)
@@ -34,11 +34,11 @@ def create_project(p, l, lang):
     # click.echo('license: ' + license)
 
 
-@cli.command('kill')
-@click.option('-p', required=True, type=str)
+@cli.command("kill")
+@click.option("-p", required=True, type=str)
 def kill(p):
     exit_test(p)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()
