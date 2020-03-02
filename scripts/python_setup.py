@@ -1,6 +1,7 @@
 # python_setup.py
 # import click
 import os
+from python_gitignore import python_gitignore
 
 
 # create python development: create pre-commit config file,
@@ -53,11 +54,7 @@ def python_setup(project_name: str):
     os.chdir(r"..")
 
 
-gitignore_str = """
-.gitattributes
-__pycache__
-.pytest_cache
-"""
+gitignore_str = python_gitignore
 
 gitignoresrc_str = """
 api_key.py
@@ -121,7 +118,7 @@ repos:
 travis_str = """
 language: python
 python:
-  - "3.8"
+  - "3.7"
 install:
   - pipenv install
 script:

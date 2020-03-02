@@ -3,4 +3,5 @@ import pytest
 
 @pytest.fixture
 def test_pass():
-    assert 1 == 1
+    ints = 1
+    assert ints == 1
