@@ -34,6 +34,11 @@ $ Coldstart project -p'project name' -l 'license selection' -lang 'language sele
 
 # Project deletion
 $ Coldstart project -p'project name'
+
+Glossary
+
+- Licenses: apache, gnugpl3, mit
+- Languages: python
 ```
 
 ## Contact Info
