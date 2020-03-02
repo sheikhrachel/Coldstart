@@ -7,17 +7,17 @@ from licenses import Apache_str, GNUGPL3_str, MIT_str
 def license_determination(license_type: str):
     if license_type == "none":
         click.echo("No license specified.  Skipping step.")
-    elif license_type == "Apache":
+    elif license_type == "Apache" or license_type == "apache":
         click.echo("Creating Apache license file in project root")
         f = open("LICENSE.md", "w+")
         f.write(Apache_str)
         f.close()
-    elif license_type == "GNUGPL3":
+    elif license_type == "GNUGPL3" or license_type == "gnugpl3":
         click.echo("Creating GNU General Public v3.0 license file in project root")
         f = open("LICENSE.md", "w+")
         f.write(GNUGPL3_str)
         f.close()
-    elif license_type == "MIT":
+    elif license_type == "MIT" or license_type == "mit":
         click.echo("Creating MIT license file in project root")
         f = open("LICENSE.md", "w+")
         f.write(MIT_str)

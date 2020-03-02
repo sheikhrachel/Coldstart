@@ -6,9 +6,10 @@ from colorama import init
 from termcolor import cprint
 from pyfiglet import figlet_format
 from create_readme import create_readme
-from exit_test import exit_test
 from license_determination import license_determination
 from language_determination import language_determination
+from repo_creation import repo_creation
+from exit_test import exit_test
 
 
 @click.group(chain=True)
@@ -24,14 +25,15 @@ def cli(ctx):
 @click.option("-p", required=True, type=str)
 @click.option("-l", type=str)
 @click.option("-lang", type=str)
-def create_project(p, l, lang):
+@click.option("-g", type=str)
+def create_project(p, l, lang, g):
     click.echo("Creating Project: [" + p + "]")
     os.mkdir(p)
     os.chdir(p)
     create_readme(p)
     license_determination(l)
     language_determination(p, lang)
-    # click.echo('license: ' + license)
+    repo_creation(g)
 
 
 @cli.command("kill")
