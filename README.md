@@ -44,7 +44,7 @@ Glossary
 ## Contact Info
 
 ```python
-self.name = 'Isaac Sheikh'
-self.email = 'sheikhisaac@gmail.com'
+self.name = 'Rachel Sheikh'
+self.email = 'sheikhrachel97@gmail.com'
 self.phone = '571-315-1881'
 ```
